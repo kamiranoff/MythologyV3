@@ -1,0 +1,3 @@
+rootProject.name = 'mythologyv2'
+
+include ':app'
