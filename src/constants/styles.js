@@ -31,6 +31,7 @@ const TEXT = {
   TEXT_4: COLOR_2,
   TEXT_5: COLOR_22,
   LINK_1: COLOR_23,
+  LINK_2: COLOR_9,
   TEXT_SELECTED_1: COLOR_24,
 };
 
@@ -42,13 +43,18 @@ const BACKGROUND = {
   BACKGROUND_5: COLOR_24,
 };
 
-const FONT_SIZE = {
+const FONT = {
   // FONTS
-  FONT_SIZE_M: 16,
-  FONT_SIZE_L: 18,
-  FONT_SIZE_XL: 20,
-  FONT_SIZE_XXL: 24,
-  FONT_SIZE_XXXL: 30,
+  SIZE: {
+    FONT_SIZE_M: 16,
+    FONT_SIZE_L: 18,
+    FONT_SIZE_XL: 20,
+    FONT_SIZE_XXL: 24,
+    FONT_SIZE_XXXL: 30,
+  },
+  FAMILY: {
+    FONT_FAMILY_1: 'Archeologicaps',
+  },
 };
 
 const HEROES_COLORS = {
@@ -76,7 +82,7 @@ const HEROES_COLORS = {
 export {
   TEXT,
   BACKGROUND,
-  FONT_SIZE,
+  FONT,
   HEROES_COLORS,
 };
 
@@ -90,7 +96,6 @@ export const SHADOW_2 = COLOR_5;
 export const ERROR_TEXT = COLOR_6;
 export const ERROR_BORDER = COLOR_6;
 export const ERROR_BACKGROUND = COLOR_6;
-
 
 // SIZING
 export const NAVBAR_HEIGHT = 64;

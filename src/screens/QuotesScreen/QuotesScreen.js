@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-import { TEXT, BACKGROUND, FONT_SIZE } from '../../constants/styles';
+import { View, Text, StyleSheet, Image } from 'react-native';
+import { TEXT, BACKGROUND, FONT } from '../../constants/styles';
+
+const quill = require('../../assets/images/quill/quill.png');
 
 const styles = StyleSheet.create({
   container: {
@@ -10,24 +12,38 @@ const styles = StyleSheet.create({
     backgroundColor: BACKGROUND.BACKGROUND_1,
   },
   title: {
-    fontSize: FONT_SIZE.FONT_SIZE_XXXL,
+    fontSize: FONT.SIZE.FONT_SIZE_XXXL,
     margin: 10,
     color: TEXT.TEXT_2,
-    textAlign: 'center'
-  }
+    textAlign: 'center',
+    fontFamily: FONT.FAMILY.FONT_FAMILY_1,
+  },
+  icon: {
+    width: 26,
+    height: 26,
+  },
 });
 
 class QuotesScreen extends Component {
   static navigationOptions = {
     title: 'Quotes',
+    tabBarLabel: 'Quotes',
+    // Note: By default the icon is only shown on iOS. Search the showIcon option below.
+    tabBarIcon: ({ tintColor }) => (
+      <Image
+        source={quill}
+        style={[styles.icon]}
+      />
+    ),
   };
+
 
   render() {
     return (
       <View
         style={styles.container}
       >
-        <Text style={styles.title}>Greek Mythology Encylopedia</Text>
+        <Text style={styles.title}>Quotes</Text>
       </View>
     );
   }
