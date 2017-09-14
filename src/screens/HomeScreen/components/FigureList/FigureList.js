@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import { FlatList, Animated, Dimensions } from 'react-native';
+import { FlatList, Animated, Dimensions, View } from 'react-native';
 
 const pantheon = require('../../../../assets/images/pantheon/pantheon.png');
 
 import FigureListItem from './FigureListItem';
 import ListHeader from '../../../../components/ListHeader/ListHeader';
+import { BACKGROUND } from '../../../../constants/styles';
 
 const AnimatedFlatList = Animated.createAnimatedComponent(FlatList);
 
@@ -22,7 +23,7 @@ class FigureList extends Component {
   render() {
     const headerHeight = this.state.scrollY.interpolate({
       inputRange: [0, 100],
-      outputRange: [Dimensions.get('window').height - 110, 200],
+      outputRange: [Dimensions.get('window').height - 110, 100],
       extrapolate: 'clamp',
     });
     const imageHeight = this.state.scrollY.interpolate({
@@ -51,6 +52,8 @@ class FigureList extends Component {
         ListFooterComponent={() => (
           <ListHeader image={pantheon} />
         )}
+        ItemSeparatorComponent={() => (
+          <View style={{ backgroundColor: '#eee', height:1 }} />)}
       />
     );
   }
