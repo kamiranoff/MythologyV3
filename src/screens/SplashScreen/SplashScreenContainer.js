@@ -5,6 +5,8 @@ import SplashScreen from './SplashScreen';
 import { fetchAllGreeks, fetchBooks, fetchQuotes } from '../../redux/actions';
 import { NavigationActions } from 'react-navigation';
 
+import Animations from '../../animations/Animations';
+
 class SplashScreenContainer extends Component {
   static navigationOptions = {
     header: false,
@@ -33,21 +35,10 @@ class SplashScreenContainer extends Component {
     }
   }
 
-  spring = () => {
-    this.springValue.setValue(0.8);
-    Animated.spring(
-      this.springValue,
-      {
-        toValue: 1,
-        friction: 1
-      }
-    ).start();
-  }
-
   render() {
     return (
       <SplashScreen
-        spring={this.spring}
+        spring={() => Animations.spring(this.springValue, 0.8, 1, 1)}
         springValue={this.springValue}
       />
     );

@@ -30,7 +30,7 @@ const SplashScreen = ({ spring, springValue }) => (
     <TouchableWithoutFeedback
       onPress={spring}
     >
-      <Animated.Image style={[styles.image, { transform: [{ scale: springValue }] }]} source={logo} />
+     <Animated.Image style={[styles.image, { transform: [{ scale: springValue }] }]} source={logo} />
     </TouchableWithoutFeedback>
     <Text style={styles.title}>Greek Mythology Encylopedia</Text>
   </View>
