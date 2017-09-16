@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import { View, Text, Image, ScrollView, StyleSheet } from 'react-native';
 import HTMLView from 'react-native-htmlview';
 import styles from './styles';
@@ -27,7 +27,6 @@ const FigureScreen = ({ navigation }) => {
     name,
     greekName,
     romanName,
-    category,
     description,
   } = navigation.state.params.item;
   return (

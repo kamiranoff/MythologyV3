@@ -5,7 +5,6 @@ import FigureList from './FigureList';
 class FigureListContainer extends Component {
 
   onPressItem = (item) => {
-    console.log(item);
     this.props.navigation.navigate('FigureScreen', { item });
   }
 
