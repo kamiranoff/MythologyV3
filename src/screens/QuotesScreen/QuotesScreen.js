@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
-import { TEXT, BACKGROUND, FONT } from '../../constants/styles';
+import { TEXT, BACKGROUND, FONT } from '../../constants/colors';
 
 const quill = require('../../assets/images/quill/quill.png');
 

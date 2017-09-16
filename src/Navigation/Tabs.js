@@ -1,11 +1,11 @@
 import { TabNavigator } from 'react-navigation';
 
-import HomeScreen from '../screens/HomeScreen/HomeScreen';
+import PantheonScreen from '../screens/PantheonScreen/PantheonScreen';
 import QuotesScreen from '../screens/QuotesScreen/QuotesScreen';
-import { TEXT } from '../constants/styles';
+import { TEXT } from '../constants/colors';
 
 const Tabs = TabNavigator({
-  Home: { screen: HomeScreen },
+  Pantheon: { screen: PantheonScreen },
   Quotes: { screen: QuotesScreen },
 
 }, {

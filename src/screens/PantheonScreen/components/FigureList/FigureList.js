@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { FlatList, Animated, Dimensions, View } from 'react-native';
+import { FlatList, Animated, View } from 'react-native';
 
-const pantheon = require('../../../../assets/images/pantheon/pantheon.png');
+const pantheonEmpty = require('../../../../assets/images/pantheon/pantheon-empty.png');
 
 import FigureListItem from './FigureListItem';
 import ListHeader from '../../../../components/ListHeader/ListHeader';
-import { BACKGROUND } from '../../../../constants/styles';
+import DIMENSIONS from '../../../../constants/dimensions';
 
 const AnimatedFlatList = Animated.createAnimatedComponent(FlatList);
 
@@ -13,8 +13,6 @@ class FigureList extends Component {
 
   constructor() {
     super();
-
-
     this.state = {
       scrollY: new Animated.Value(0),
     };
@@ -23,7 +21,7 @@ class FigureList extends Component {
   render() {
     const headerHeight = this.state.scrollY.interpolate({
       inputRange: [0, 100],
-      outputRange: [Dimensions.get('window').height - 110, 100],
+      outputRange: [DIMENSIONS.WONDOW_HEIGHT - 110, 100],
       extrapolate: 'clamp',
     });
     const imageHeight = this.state.scrollY.interpolate({
@@ -42,18 +40,18 @@ class FigureList extends Component {
           [{ nativeEvent: { contentOffset: { y: this.state.scrollY } } }]
         )}
         data={this.props.greeks}
-        renderItem={({ item }) => <FigureListItem figure={item} />}
+        renderItem={({ item }) => <FigureListItem figure={item} onPress={() => this.props.onPressItem(item)} />}
         keyExtractor={(item, index) => item._id}
         ListHeaderComponent={() => (
-          <ListHeader image={pantheon} containerStyle={{ height: headerHeight }}
+          <ListHeader image={pantheonEmpty} containerStyle={{ height: headerHeight }}
                       imageStyle={{ height: imageHeight, width: imageWidth }} />
         )}
         scrollEventThrottle={16}
         ListFooterComponent={() => (
-          <ListHeader image={pantheon} />
+          <ListHeader image={pantheonEmpty} />
         )}
         ItemSeparatorComponent={() => (
-          <View style={{ backgroundColor: '#eee', height:1 }} />)}
+          <View style={{ backgroundColor: '#eee', height: 1 }} />)}
       />
     );
   }

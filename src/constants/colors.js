@@ -30,9 +30,11 @@ const TEXT = {
   TEXT_3: COLOR_4,
   TEXT_4: COLOR_2,
   TEXT_5: COLOR_22,
+  TEXT_6: COLOR_12,
   LINK_1: COLOR_23,
   LINK_2: COLOR_9,
   TEXT_SELECTED_1: COLOR_24,
+  BUTTON_TEXT_1: COLOR_8,
 };
 
 const BACKGROUND = {
@@ -46,6 +48,7 @@ const BACKGROUND = {
 const FONT = {
   // FONTS
   SIZE: {
+    FONT_SIZE_S: 12,
     FONT_SIZE_M: 16,
     FONT_SIZE_L: 18,
     FONT_SIZE_XL: 20,
@@ -79,23 +82,25 @@ const HEROES_COLORS = {
   SEER_ORACLE_BACKGROUND: COLOR_21,
 };
 
+// ERRORS, WARNING, ALRIGHT
+const ERROR = {
+  TEXT: COLOR_6,
+  BORDER: COLOR_6,
+  BACKGROUND: COLOR_6,
+};
+
 export {
   TEXT,
   BACKGROUND,
   FONT,
   HEROES_COLORS,
+  ERROR,
 };
 
-export const BUTTON_TEXT_1 = COLOR_8;
 export const BORDER = COLOR_5;
 export const BORDER_2 = COLOR_24;
 export const SHADOW_1 = COLOR_9;
 export const SHADOW_2 = COLOR_5;
-
-// ERRORS, WARNING, ALRIGHT
-export const ERROR_TEXT = COLOR_6;
-export const ERROR_BORDER = COLOR_6;
-export const ERROR_BACKGROUND = COLOR_6;
 
 // SIZING
 export const NAVBAR_HEIGHT = 64;

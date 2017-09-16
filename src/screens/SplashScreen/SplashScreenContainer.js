@@ -31,7 +31,7 @@ class SplashScreenContainer extends Component {
 
   componentWillReceiveProps(nextProps) {
     if (!nextProps.figures.loading && !nextProps.books.loading && !nextProps.quotes.loading) {
-      this._navigateTo('Home');
+      this._navigateTo('Tabs');
     }
   }
 

@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
 
 class HomeScreen extends Component {
   static navigationOptions = {
-    title: 'Mythology',
+    title: 'Pantheon',
     tabBarIcon: ({ tintColor }) => (
       <Image
         source={home}
@@ -25,7 +25,7 @@ class HomeScreen extends Component {
 
   render() {
     return (
-      <FigureListContainer />
+      <FigureListContainer navigation={this.props.navigation} />
     );
   }
 }

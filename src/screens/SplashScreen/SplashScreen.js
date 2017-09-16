@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, Animated, TouchableWithoutFeedback } from 'react-native';
-import { TEXT, BACKGROUND, FONT } from '../../constants/styles';
+import { TEXT, BACKGROUND, FONT } from '../../constants/colors';
 
 const logo = require('../../assets/images/logo/logo.png');
 
