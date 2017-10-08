@@ -47,9 +47,6 @@ class FigureList extends Component {
                       imageStyle={{ height: imageHeight, width: imageWidth }} />
         )}
         scrollEventThrottle={16}
-        ListFooterComponent={() => (
-          <ListHeader image={pantheonEmpty} />
-        )}
         ItemSeparatorComponent={() => (
           <View style={{ backgroundColor: '#eee', height: 1 }} />)}
       />

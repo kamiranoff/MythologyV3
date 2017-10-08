@@ -2,14 +2,10 @@ import React, { PropTypes } from 'react';
 import { View, Text } from 'react-native';
 
 import Helpers from '../../util/Helpers';
-
 import styles from './styles';
 
-const Label = ({ category, labelStyle }) => {
-  let propStyle = null;
-  if (labelStyle) {
-    propStyle = labelStyle;
-  }
+const Label = ({ category, labelStyle, withBackground }) => {
+
   const typeViewStyleClass = category.replace(/ |\//g, '_');
   const typeTextStyleClass = `${category.replace(/ |\//g, '_')}_text`;
   return (
@@ -17,7 +13,9 @@ const Label = ({ category, labelStyle }) => {
       style={[
         styles.listElementTypeContainer,
         styles[typeViewStyleClass],
-        propStyle]}
+        labelStyle,
+        withBackground && styles[typeViewStyleClass]]
+      }
     >
       <Text
         style={[styles.listElementType, styles[typeTextStyleClass]]}
@@ -30,7 +28,7 @@ const Label = ({ category, labelStyle }) => {
 
 Label.propTypes = {
   category: PropTypes.string.isRequired,
-  labelStyle: PropTypes.object,
+  labelStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.number]),
 };
 
 export { Label };

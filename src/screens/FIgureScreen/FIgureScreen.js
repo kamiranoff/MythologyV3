@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, Image, ScrollView, StyleSheet } from 'react-native';
 import HTMLView from 'react-native-htmlview';
 import styles from './styles';
+import { Label } from '../../components/Label/Label';
 
 const renderImage = (images) => {
   const imageFromApi = images.regular;
@@ -28,10 +29,20 @@ const FigureScreen = ({ navigation }) => {
     greekName,
     romanName,
     description,
+    category,
   } = navigation.state.params.item;
   return (
     <ScrollView>
       {renderImage(images)}
+      <Label
+        category={category}
+        labelStyle={{
+          position: 'absolute',
+          top: 5,
+          right: 5,
+          zIndex: 1,
+        }}
+      />
       <View style={styles.descriptionContainer}>
         <Text
           adjustsFontSizeToFit

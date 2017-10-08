@@ -18,7 +18,7 @@ export default StyleSheet.create({
     paddingTop: 20,
     paddingHorizontal: 20,
     textAlign: 'center',
-    fontSize: FONT.SIZE.FONT_SIZE_L,
+    fontSize: FONT.SIZE.L,
     fontFamily: FONT.FAMILY.FONT_FAMILY_1,
     flex: 1,
     height: 100,
