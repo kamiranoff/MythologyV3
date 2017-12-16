@@ -37,7 +37,6 @@ class BooksScreen extends Component {
     ),
   };
 
-
   render() {
     return (
       <View

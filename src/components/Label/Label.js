@@ -12,7 +12,6 @@ const Label = ({ category, labelStyle, withBackground }) => {
     <View
       style={[
         styles.listElementTypeContainer,
-        styles[typeViewStyleClass],
         labelStyle,
         withBackground && styles[typeViewStyleClass]]
       }
