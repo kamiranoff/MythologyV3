@@ -21,7 +21,7 @@ class FigureList extends Component {
   render() {
     const headerHeight = this.state.scrollY.interpolate({
       inputRange: [0, 100],
-      outputRange: [DIMENSIONS.WONDOW_HEIGHT - 110, 100],
+      outputRange: [DIMENSIONS.WINDOW_HEIGHT - 110, 100],
       extrapolate: 'clamp',
     });
     const imageHeight = this.state.scrollY.interpolate({

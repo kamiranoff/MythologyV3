@@ -4,11 +4,11 @@ import { FONT } from '../../constants/colors';
 
 export default StyleSheet.create({
   imageContainer: {
-    height: DIMENSIONS.WONDOW_HEIGHT - 200,
+    height: DIMENSIONS.WINDOW_HEIGHT - 200,
   },
   image: {
     resizeMode: 'cover',
-    height: DIMENSIONS.WONDOW_HEIGHT - 200,
+    height: DIMENSIONS.WINDOW_HEIGHT - 200,
   },
   descriptionContainer: {
     paddingHorizontal: 10,
