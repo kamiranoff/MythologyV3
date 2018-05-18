@@ -21,17 +21,13 @@ class SplashScreenContainer extends Component {
     this.springValue = new Animated.Value(1);
   }
 
-  _navigateTo = (routeName) => {
-    const actionToDispatch = NavigationActions.reset({
-      index: 0,
-      actions: [NavigationActions.navigate({ routeName })]
-    });
-    this.props.navigation.dispatch(actionToDispatch);
+  navigateTo = (routeName) => {
+    this.props.navigation.navigate(routeName);
   }
 
   componentWillReceiveProps(nextProps) {
     if (!nextProps.figures.loading && !nextProps.books.loading && !nextProps.quotes.loading) {
-      this._navigateTo('Tabs');
+      this.navigateTo('Tabs');
     }
   }
 

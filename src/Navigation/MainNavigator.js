@@ -1,15 +1,10 @@
-import { StackNavigator } from 'react-navigation';
-
-import Tabs from './Tabs';
+import { createSwitchNavigator } from 'react-navigation';
 import SplashScreenContainer from '../screens/SplashScreen/SplashScreenContainer';
-import FigureScreen from '../screens/FIgureScreen/FIgureScreen';
+import AppNavigator from './AppNavigator';
 
-const MainNavigator = StackNavigator({
-  SplashScreen: { screen: SplashScreenContainer },
-  Tabs: { screen: Tabs },
-  FigureScreen: { screen: FigureScreen }
-}, {
-  headerMode: 'screen'
+const MainNavigator =  createSwitchNavigator({
+  SplashScreen: SplashScreenContainer,
+  App: AppNavigator,
 });
 
 export default MainNavigator;
