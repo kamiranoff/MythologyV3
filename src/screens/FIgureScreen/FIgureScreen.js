@@ -21,47 +21,6 @@ const renderImage = (images) => {
   return null;
 };
 
-const FigureScreen = ({ navigation }) => {
-
-  const {
-    images,
-    name,
-    greekName,
-    romanName,
-    description,
-    category,
-  } = navigation.state.params.item;
-  return (
-    <ScrollView>
-      {renderImage(images)}
-      <Label
-        category={category}
-        labelStyle={{
-          position: 'absolute',
-          top: 5,
-          right: 5,
-          zIndex: 1,
-        }}
-      />
-      <View style={styles.descriptionContainer}>
-        <Text
-          adjustsFontSizeToFit
-          allowFontScaling
-          style={styles.name}
-        >{name}
-        </Text>
-        <Text style={styles.greekName}>
-          {greekName}{romanName ? ` - ${romanName}` : null}
-        </Text>
-        <HTMLView
-          value={description}
-          stylesheet={htmlStyle}
-        />
-      </View>
-    </ScrollView>
-  );
-};
-
 const htmlStyle = StyleSheet.create({
   h1: {
     fontSize: 20,
@@ -82,5 +41,42 @@ const htmlStyle = StyleSheet.create({
     fontStyle: 'italic',
   },
 });
+
+const FigureScreen = ({ navigation }) => {
+  const {
+    images,
+    name,
+    greekName,
+    romanName,
+    description,
+    category,
+  } = navigation.state.params.item;
+  return (
+    <ScrollView>
+      {renderImage(images)}
+      <Label
+        category={category}
+        labelStyle={styles.label}
+      />
+      <View style={styles.descriptionContainer}>
+        <Text
+          adjustsFontSizeToFit
+          allowFontScaling
+          style={styles.name}
+        >{name}
+        </Text>
+        <Text style={styles.greekName}>
+          {greekName}{romanName ? ` - ${romanName}` : null}
+        </Text>
+        <HTMLView
+          value={description}
+          stylesheet={htmlStyle}
+        />
+      </View>
+    </ScrollView>
+  );
+};
+
+
 
 export default FigureScreen;

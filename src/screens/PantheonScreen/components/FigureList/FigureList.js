@@ -11,12 +11,32 @@ const AnimatedFlatList = Animated.createAnimatedComponent(FlatList);
 
 class FigureList extends Component {
 
+  renderHeader = (imagewidth, imageHeight, headerHeight) => {
+    return (
+      <ListHeader
+        image={pantheonEmpty}
+        containerStyle={{ height: headerHeight }}
+        imageStyle={{ width: imagewidth, height: imageHeight }} />
+    );
+  }
+
+  renderItem = ({ item }) => (
+    <FigureListItem
+      figure={item}
+      onPress={this.handleItemPressed}
+    />
+  );
+
   constructor() {
     super();
     this.state = {
       scrollY: new Animated.Value(0),
     };
   }
+
+  handleItemPressed = (item) => (
+    this.props.onPressItem(item));
+
 
   render() {
     const headerHeight = this.state.scrollY.interpolate({
@@ -40,12 +60,9 @@ class FigureList extends Component {
           [{ nativeEvent: { contentOffset: { y: this.state.scrollY } } }]
         )}
         data={this.props.greeks}
-        renderItem={({ item }) => <FigureListItem figure={item} onPress={() => this.props.onPressItem(item)} />}
-        keyExtractor={(item, index) => item._id}
-        ListHeaderComponent={() => (
-          <ListHeader image={pantheonEmpty} containerStyle={{ height: headerHeight }}
-                      imageStyle={{ height: imageHeight, width: imageWidth }} />
-        )}
+        renderItem={this.renderItem}
+        keyExtractor={item => item._id}
+        ListHeaderComponent={this.renderHeader(imageWidth, imageHeight, headerHeight)}
         scrollEventThrottle={16}
         ItemSeparatorComponent={() => (
           <View style={{ backgroundColor: '#eee', height: 1 }} />)}

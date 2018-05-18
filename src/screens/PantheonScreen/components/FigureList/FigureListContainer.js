@@ -11,7 +11,10 @@ class FigureListContainer extends Component {
   render() {
     const { greeks } = this.props;
     return (
-      <FigureList greeks={greeks} onPressItem={this.onPressItem} />
+      <FigureList
+        greeks={greeks}
+        onPressItem={this.onPressItem}
+      />
     );
   }
 }

@@ -30,5 +30,10 @@ export default StyleSheet.create({
     textAlign: 'center',
     fontSize: 15,
   },
-
+  label: {
+    position: 'absolute',
+    top: 5,
+    right: 5,
+    zIndex: 1,
+  },
 });

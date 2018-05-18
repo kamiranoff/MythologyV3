@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, StyleSheet, TouchableHighlight, View, Image } from 'react-native';
+import { Text, StyleSheet, TouchableHighlight, View } from 'react-native';
 import { BACKGROUND, FONT, TEXT } from '../../../../constants/colors';
 import { Label } from '../../../../components/Label/Label';
 
@@ -28,12 +28,12 @@ const styles = StyleSheet.create({
 
 const FigureListItem = ({ figure, onPress }) => (
   <TouchableHighlight
-    onPress={onPress}
+    onPress={() => onPress(figure)}
     style={styles.container}
     underlayColor={BACKGROUND.BACKGROUND_1}
   >
     <View style={styles.subContainer}>
-      <View style={{}}>
+      <View>
         <Text style={styles.name}>
           {figure.name}
         </Text>
