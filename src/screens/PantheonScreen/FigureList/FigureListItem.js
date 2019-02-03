@@ -10,10 +10,15 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
     height: 80,
   },
+  names: {
+    flexDirection: 'row',
+    alignItems: 'center'
+  },
   name: {
     fontFamily: FONT.FAMILY.FONT_FAMILY_1,
     fontSize: FONT.SIZE.M,
     color: TEXT.TEXT_2,
+    marginRight: 10,
   },
   subContainer: {
     flex: 1,
@@ -21,24 +26,29 @@ const styles = StyleSheet.create({
   labelStyle: {
     marginBottom: 10,
   },
-  description: {
+  romanName: {
     fontSize: FONT.SIZE.XS,
+    fontStyle: 'italic'
   },
 });
 
-const FigureListItem = ({ figure, onPress }) => (
+const FigureListItem = ({figure, onPress}) => (
   <TouchableHighlight
     onPress={() => onPress(figure)}
     style={styles.container}
     underlayColor={BACKGROUND.BACKGROUND_1}
   >
     <View style={styles.subContainer}>
-      <View>
+      <View style={styles.names}>
         <Text style={styles.name}>
           {figure.name}
         </Text>
-        <Label category={figure.category} labelStyle={styles.labelStyle} />
+        <Text numberOfLines={1} style={styles.romanName}>
+          {figure.romanName}
+        </Text>
       </View>
+      <Label category={figure.category} labelStyle={styles.labelStyle}/>
+
       <Text numberOfLines={1} style={styles.description}>
         {figure.shortDescription}
       </Text>

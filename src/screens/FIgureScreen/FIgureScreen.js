@@ -1,8 +1,9 @@
 import React from 'react';
 import { View, Text, Image, ScrollView, StyleSheet } from 'react-native';
 import HTMLView from 'react-native-htmlview';
-import styles from './styles';
 import { Label } from '../../components/Label/Label';
+import DIMENSIONS from "../../constants/dimensions";
+import { FONT } from "../../constants/colors";
 
 const renderImage = (images) => {
   const imageFromApi = images.regular;
@@ -42,7 +43,7 @@ const htmlStyle = StyleSheet.create({
   },
 });
 
-const FigureScreen = ({ navigation }) => {
+const FigureScreen = ({navigation}) => {
   const {
     images,
     name,
@@ -54,10 +55,6 @@ const FigureScreen = ({ navigation }) => {
   return (
     <ScrollView>
       {renderImage(images)}
-      <Label
-        category={category}
-        labelStyle={styles.label}
-      />
       <View style={styles.descriptionContainer}>
         <Text
           adjustsFontSizeToFit
@@ -65,9 +62,14 @@ const FigureScreen = ({ navigation }) => {
           style={styles.name}
         >{name}
         </Text>
+        <Label
+          category={category}
+          labelStyle={styles.label}
+        />
         <Text style={styles.greekName}>
           {greekName}{romanName ? ` - ${romanName}` : null}
         </Text>
+
         <HTMLView
           value={description}
           stylesheet={htmlStyle}
@@ -77,6 +79,37 @@ const FigureScreen = ({ navigation }) => {
   );
 };
 
+const styles = StyleSheet.create({
+  imageContainer: {
+    height: DIMENSIONS.WINDOW_HEIGHT - 200,
+  },
+  image: {
+    resizeMode: 'cover',
+    height: DIMENSIONS.WINDOW_HEIGHT - 200,
+  },
+  descriptionContainer: {
+    paddingHorizontal: 10,
+    marginBottom: 30,
+  },
+  name: {
+    paddingTop: 20,
+    textAlign: 'center',
+    fontSize: FONT.SIZE.L,
+    fontFamily: FONT.FAMILY.FONT_FAMILY_1,
+    flex: 1,
+  },
+  label: {
+    alignItems: 'center',
+  },
+  greekName: {
+    fontStyle: 'italic',
+    marginTop: 10,
+    marginBottom: 20,
+    textAlign: 'center',
+    fontSize: 15,
+  },
+
+});
 
 
 export default FigureScreen;
