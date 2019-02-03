@@ -1,4 +1,4 @@
-package com.mythologyv2;
+package com.mythologyv3;
 
 import com.facebook.react.ReactActivity;
 
@@ -10,6 +10,6 @@ public class MainActivity extends ReactActivity {
      */
     @Override
     protected String getMainComponentName() {
-        return "mythologyv2";
+        return "MythologyV3";
     }
 }

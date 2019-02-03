@@ -1,5 +1,5 @@
 {
-  "name": "mythologyv2",
+  "name": "MythologyV3",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -7,31 +7,31 @@
     "test": "jest"
   },
   "dependencies": {
-    "concurrently": "3.5.1",
-    "prop-types": "15.6.1",
     "react": "16.6.3",
     "react-native": "0.58.3",
-    "react-native-htmlview": "0.12.0",
-    "react-native-vector-icons": "4.3.0",
-    "react-navigation": "2.0.1",
-    "react-redux": "5.0.6",
-    "redux": "3.7.2",
-    "redux-promise": "0.5.3",
-    "redux-thunk": "2.2.0"
+    "react-navigation": "3.1.2",
+    "react-redux": "6.0.0",
+    "redux": "4.0.1",
+    "redux-promise": "0.6.0",
+    "redux-thunk": "2.3.0",
+    "react-native-htmlview": "0.13.0",
+    "react-native-vector-icons": "6.2.0"
   },
   "devDependencies": {
-    "@types/jest": "22.2.3",
-    "@types/react": "16.3.14",
-    "@types/react-native": "0.55.14",
-    "babel-jest": "20.0.3",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "24.0.0",
+    "jest": "24.0.0",
+    "metro-react-native-babel-preset": "0.51.1",
+    "react-test-renderer": "16.6.3",
+    "@types/jest": "23.3.13",
+    "@types/react": "16.8.1",
+    "@types/react-native": "0.57.32",
+    "babel-preset-react-native": "4.0.1",
+    "react-native-typescript-transformer": "1.2.11",
     "redux-logger": "3.0.6",
-    "babel-preset-react-native": "3.0.2",
-    "jest": "20.0.4",
-    "react-native-typescript-transformer": "1.2.4",
-    "react-test-renderer": "16.0.0-alpha.12",
-    "tslint": "5.10.0",
-    "typescript": "2.8.3",
-    "rimraf": "2.6.2"
+    "rimraf": "2.6.3",
+    "tslint": "5.12.1",
+    "typescript": "3.3.1"
   },
   "jest": {
     "preset": "react-native"

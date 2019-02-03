@@ -1,4 +1,10 @@
-import { AppRegistry } from 'react-native';
-import App from './src/';
+/**
+ * @format
+ * @lint-ignore-every XPLATJSCOPYRIGHT1
+ */
 
-AppRegistry.registerComponent('mythologyv2', () => App);
+import {AppRegistry} from 'react-native';
+import App from './src';
+import {name as appName} from './app.json';
+
+AppRegistry.registerComponent(appName, () => App);
