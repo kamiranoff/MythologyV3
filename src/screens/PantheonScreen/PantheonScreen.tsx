@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, Image } from 'react-native';
 
-import FigureListContainer from './components/FigureList/FigureListContainer';
+import FigureListContainer from './FigureList/FigureListContainer';
 
 const home = require('../../assets/images/pantheon/pantheon.png');
 

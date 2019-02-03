@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, StyleSheet, TouchableHighlight, View } from 'react-native';
-import { BACKGROUND, FONT, TEXT } from '../../../../constants/colors';
-import { Label } from '../../../../components/Label/Label';
+import { BACKGROUND, FONT, TEXT } from '../../../constants/colors';
+import { Label } from '../../../components/Label/Label';
 
 const styles = StyleSheet.create({
   container: {

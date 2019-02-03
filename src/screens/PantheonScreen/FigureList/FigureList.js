@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { FlatList, Animated, View } from 'react-native';
 
-const pantheonEmpty = require('../../../../assets/images/pantheon/pantheon-empty.png');
+const pantheonEmpty = require('../../../assets/images/pantheon/pantheon-empty.png');
 
 import FigureListItem from './FigureListItem';
-import ListHeader from '../../../../components/ListHeader/ListHeader';
-import DIMENSIONS from '../../../../constants/dimensions';
+import ListHeader from '../../../components/ListHeader/ListHeader';
+import DIMENSIONS from '../../../constants/dimensions';
 
 const AnimatedFlatList = Animated.createAnimatedComponent(FlatList);
 
